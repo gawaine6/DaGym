@@ -1,6 +1,5 @@
 package com.testcode.yjp.last.service;
 
-import com.testcode.yjp.last.domain.Diet;
 import com.testcode.yjp.last.domain.dto.DietAddDto;
 import com.testcode.yjp.last.repository.DietRepository;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +33,7 @@ public class DietService {
                 .collect(Collectors.toList());
     }
 
+    // 식단 내용 삭제
     @Transactional
     public void delete(Long id) {
 //        Diet diet = dietRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("no diet id" + id));

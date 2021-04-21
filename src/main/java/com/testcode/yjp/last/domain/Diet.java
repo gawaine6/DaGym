@@ -36,4 +36,5 @@ public class Diet extends BaseEntity{
         this.diet_fat = diet_fat;
         this.diet_time = diet_time;
     }
+
 }

@@ -9,6 +9,7 @@
     <title>dietSelect</title>
     <script th:src="@{/js/diet.js}"></script>
 </head>
+
 <div layout:fragment="content">
     <div class="container-fluid p-0">
         <h1 class="h3 mb-3">식단검색</h1>
@@ -19,33 +20,41 @@
             <input type="text" id="diet" placeholder="음식을 입력하세요">
             <button type="button" class="dietSearch">음식찾기</button>
             <button type="button" class="dietClose">선택완료</button>
-            <a th:href="@{/diet/list(id= ${session.loginId})}">결과</a>
-            <br>
         </div>
-
-        <!--음식 데이터 조회-->
-        <div class="row">
-            <div class="col-10 col-xl-10">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">식단</h5>
-                    </div>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>음식이름</th>
-                            <th>칼로리</th>
-                            <th>탄수화물</th>
-                            <th>단백질</th>
-                            <th>지방</th>
+        <!-- 선택한 부분 -->
+        <div class="col-10 col-xl-10">
+            <div class="card">
+                <div class="menu">
+                    <table class="selected">
+                        <tr class="selected-list">
+                            <td>선택된거</td>
                         </tr>
-                        </thead>
-                        <tbody id="dietList"></tbody>
                     </table>
                 </div>
             </div>
         </div>
+        <!-- 검색결과 -->
+        <div class="col-10 col-xl-10">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">식단</h5>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>음식이름</th>
+                        <th>칼로리</th>
+                        <th>탄수화물</th>
+                        <th>단백질</th>
+                        <th>지방</th>
+                    </tr>
+                    </thead>
+                    <tbody class="dietList"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
+</div>
 </div>
 
 </html>
